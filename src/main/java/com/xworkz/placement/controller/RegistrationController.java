@@ -1,5 +1,7 @@
 package com.xworkz.placement.controller;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -9,23 +11,41 @@ import org.springframework.web.servlet.ModelAndView;
 
 import com.xworkz.placement.dto.RegistrationDTO;
 import com.xworkz.placement.entity.UserEntity;
+import com.xworkz.placement.service.RegistrationService;
 
 @Controller
 public class RegistrationController {
+	private final Logger logger=LogManager.getLogger(RegistrationController.class);
 	
-
+	@Autowired
+	private RegistrationService registrationService;
+	
+	
 	@GetMapping("displayRegistration.do")
 	public ModelAndView displayRegistration() {
+		logger.info("INFO - login method invoked");
+		try {
+			throw new Exception("Exception occurs");
+		}catch(Exception e) {
+			logger.error(e.getMessage(),e);
+		}
 		return new ModelAndView("registration");
 	}
 
 	
-	 @PostMapping("register.do") public ModelAndView 
-	 registrationdetails(RegistrationDTO registrationDTO) { 
+	 @PostMapping("register.do")
+	 public ModelAndView registrationdetails(RegistrationDTO registrationDTO) { 
+		 logger.info("INFO - login method invoked");
+			try {
+				throw new Exception("Exception occurs");
+			}catch(Exception e) {
+				logger.error(e.getMessage(),e);
+			}
 	 //System.out.println(registrationDTO.getPassword().generatePassayPassword());
-	UserEntity entity = new UserEntity(); 
-	 BeanUtils.copyProperties(registrationDTO, entity);
-	 return new ModelAndView("success","register",registrationDTO); } 
+	
+	  registrationService.saveData(registrationDTO);
+	 return new ModelAndView("success");
+	 } 
 	  
 	 
 }
