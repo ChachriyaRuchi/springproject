@@ -23,12 +23,7 @@ public class LoginController {
 	@PostMapping("/login.do")
 	public ModelAndView login(LoginDTO loginDto) {
 		logger.info("INFO - login method invoked");
-		try {
-			throw new Exception("Exception occurs");
-		}catch(Exception e) {
-			logger.error(e.getMessage(),e);
-		}
-			
+		
 		boolean validUser = loginService.validateUser(loginDto);
 		
 		if (validUser) {

@@ -33,16 +33,14 @@ public class RegistrationDAOImpl{
 		EntityTransaction transaction=null;
 		logger.info("INFO- save method of registrationdao invoked");
 		try {
+			
 		em=entityManagerFactory.createEntityManager();
 		transaction=em.getTransaction();
 		transaction.begin();
 		em.persist(entity);
 		transaction.commit();
-		throw new Exception("some exception in registration dao");
-		}
-		catch(Exception e) {
-		logger.error(e.getMessage(),e);
-			
+		}catch(Exception e) {
+			e.printStackTrace();
 		}
 		finally {
 			

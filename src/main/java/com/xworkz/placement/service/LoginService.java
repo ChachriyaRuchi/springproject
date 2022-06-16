@@ -17,7 +17,7 @@ public class LoginService {
 
 	public boolean validateUser(LoginDTO loginDTO) {
 		logger.info("INFO - validate user method invoked");
-		try {
+		
 			System.out.println(loginDTO.getUsername());
 			System.out.println(loginDTO.getPassword());
 			if (!loginDTO.getPassword().isEmpty() && !loginDTO.getUsername().isEmpty()) {
@@ -28,11 +28,8 @@ public class LoginService {
 			else {
 				return false;		
 			}
-		}catch(Exception e) {
-			
-			logger.error(e.getMessage(),e);
-			return false;
-		}
+		
+		
 		
 	}	
 	

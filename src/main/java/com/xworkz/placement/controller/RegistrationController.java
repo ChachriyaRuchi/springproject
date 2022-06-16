@@ -24,11 +24,7 @@ public class RegistrationController {
 	@GetMapping("displayRegistration.do")
 	public ModelAndView displayRegistration() {
 		logger.info("INFO - login method invoked");
-		try {
-			throw new Exception("Exception occurs");
-		}catch(Exception e) {
-			logger.error(e.getMessage(),e);
-		}
+		
 		return new ModelAndView("registration");
 	}
 
@@ -36,11 +32,7 @@ public class RegistrationController {
 	 @PostMapping("register.do")
 	 public ModelAndView registrationdetails(RegistrationDTO registrationDTO) { 
 		 logger.info("INFO - login method invoked");
-			try {
-				throw new Exception("Exception occurs");
-			}catch(Exception e) {
-				logger.error(e.getMessage(),e);
-			}
+			
 	 //System.out.println(registrationDTO.getPassword().generatePassayPassword());
 	
 	  registrationService.saveData(registrationDTO);

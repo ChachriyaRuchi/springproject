@@ -22,13 +22,12 @@ public class RegistrationService {
 		logger.info("INFO - save data registration service method invoked");
 		UserEntity entity = new UserEntity(); 
 		 BeanUtils.copyProperties(registrationDTO, entity);
+		{
 		 logger.info("INFO - login method invoked");
-			try {
+			
 				registrationDao.saveData(entity);
-				throw new Exception("Exception occurs");
-			}catch(Exception e) {
-				logger.error(e.getMessage(),e);
-			}
+		 }		
+			
 			
 		
 	}

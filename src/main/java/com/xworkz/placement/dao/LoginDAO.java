@@ -28,11 +28,7 @@ public class LoginDAO {
 	
 	public void saveData() {
 		logger.info("INFO - login method invoked");
-		try {
-			throw new Exception("Exception occurs");
-		}catch(Exception e) {
-			logger.error(e.getMessage(),e);
-		}
+		
 	}
 	
 }
