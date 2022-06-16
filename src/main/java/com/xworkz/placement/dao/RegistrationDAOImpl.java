@@ -13,6 +13,7 @@ import com.xworkz.placement.dto.RegistrationDTO;
 import com.xworkz.placement.entity.UserEntity;
 @Repository
 public class RegistrationDAOImpl{
+	
 	@Autowired
 	EntityManagerFactory entityManagerFactory;
 	
