@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Registration successful your password is :${register.name}</h1>
+<h1>Registration successful your password is :${register.password}</h1>
 </body>
 </html>

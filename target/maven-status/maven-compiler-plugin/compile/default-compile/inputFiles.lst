@@ -1,8 +1,12 @@
-C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\utility\PasswordGenerate.java
 C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\constants\Gender.java
+C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\dao\LoginDAO.java
 C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\controller\LoginController.java
 C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\controller\RegistrationController.java
 C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\dao\RegistrationDAO.java
+C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\service\LoginService.java
 C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\dto\LoginDTO.java
 C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\dto\RegistrationDTO.java
+C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\util\PasswordGenerate.java
 C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\dao\RegistrationDAOImpl.java
+C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\entity\UserEntity.java
+C:\Users\Ruchi Chachriya\eclipsenew\Spring\placement-application\src\main\java\com\xworkz\placement\service\RegistrationService.java

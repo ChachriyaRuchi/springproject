@@ -16,7 +16,7 @@
 		<form action="login.do" method="post">
 			<span>
 				<label for="username">UserName </label>
-				<input type="email" class="col-sm-2 col-form-label" name="username" ><br><br>
+				<input type="email" class="col-sm-2 col-form-label" name="email" ><br><br>
 			</span>
 			<span>
 				<label for="password">Password</label> 
@@ -27,7 +27,7 @@
 					<a href="displayRegistration.do" class="btn btn-primary">signup</a><br><br>
 				
 				</span>
-				<a href="" class="btn btn-link">Forgot Your Password?</a>
+				<a href="#" class="btn btn-link">Forgot Your Password?</a>
 		</form>	
 	</div>
 	<div  class ="container-fluid text-center copyright" style="bottom: 0;position:fixed;">

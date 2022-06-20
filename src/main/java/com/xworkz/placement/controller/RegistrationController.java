@@ -2,42 +2,43 @@ package com.xworkz.placement.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.xworkz.placement.dto.RegistrationDTO;
-import com.xworkz.placement.entity.UserEntity;
 import com.xworkz.placement.service.RegistrationService;
 
-@Controller
+@RestController("/")
 public class RegistrationController {
-	private final Logger logger=LogManager.getLogger(RegistrationController.class);
-	
+	private final Logger logger = LogManager.getLogger(RegistrationController.class);
+
 	@Autowired
 	private RegistrationService registrationService;
-	
-	
+
 	@GetMapping("displayRegistration.do")
 	public ModelAndView displayRegistration() {
-		logger.info("INFO - login method invoked");
 		
 		return new ModelAndView("registration");
 	}
 
-	
-	 @PostMapping("register.do")
-	 public ModelAndView registrationdetails(RegistrationDTO registrationDTO) { 
-		 logger.info("INFO - login method invoked");
+	@PostMapping("register.do")
+	public ModelAndView saveRegistrationDetails(  RegistrationDTO registrationDTO) {
+		//logger.info("INFO - login method invoked");
+
+		try {
+			registrationService.saveData(registrationDTO);
 			
-	 //System.out.println(registrationDTO.getPassword().generatePassayPassword());
-	
-	  registrationService.saveData(registrationDTO);
-	 return new ModelAndView("success");
-	 } 
-	  
-	 
+			
+		} catch (Exception e) {
+			logger.error(e.getMessage(), e);
+			return new ModelAndView("error");
+		}
+		return new ModelAndView("success");
+	}
+
 }

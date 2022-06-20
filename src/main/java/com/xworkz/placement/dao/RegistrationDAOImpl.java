@@ -1,5 +1,7 @@
 package com.xworkz.placement.dao;
 
+import java.util.Base64;
+
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
@@ -11,49 +13,42 @@ import org.springframework.stereotype.Repository;
 
 import com.xworkz.placement.dto.RegistrationDTO;
 import com.xworkz.placement.entity.UserEntity;
+
 @Repository
-public class RegistrationDAOImpl{
+public class RegistrationDAOImpl implements RegistrationDAO {
 	
-	@Autowired
-	EntityManagerFactory entityManagerFactory;
-	
-	private final Logger logger=LogManager.getLogger(RegistrationDAOImpl.class);
-	
+	private EntityManagerFactory entityManagerFactory;
+
+	private final Logger logger = LogManager.getLogger(RegistrationDAOImpl.class);
+
 	public EntityManagerFactory getEntityManagerFactory() {
 		return entityManagerFactory;
 	}
 
-
+	@Autowired
 	public void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {
 		this.entityManagerFactory = entityManagerFactory;
 	}
 
-
-	public void saveData(UserEntity entity) {
+	@Override
+	public boolean saveData(UserEntity entity) throws Exception {
 		EntityManager em = null;
-		EntityTransaction transaction=null;
+		EntityTransaction transaction = null;
+		boolean saveStatus = false;
+		
 		logger.info("INFO- save method of registrationdao invoked");
 		try {
-			
-		em=entityManagerFactory.createEntityManager();
-		transaction=em.getTransaction();
-		transaction.begin();
-		em.persist(entity);
-		transaction.commit();
-		}catch(Exception e) {
-			e.printStackTrace();
+			em = entityManagerFactory.createEntityManager();
+			transaction = em.getTransaction();
+			transaction.begin();
+			em.persist(entity);
+			transaction.commit();
+			saveStatus = true;
+		} catch (Exception e) {
+			throw e;
 		}
-		finally {
-			
-			if(em!=null) {
-				em.close();
-			}
-			if(transaction!=null) {
-				transaction.rollback();
-			}
-			
-		}
-		
+		return saveStatus;
 	}
+	
 
 }

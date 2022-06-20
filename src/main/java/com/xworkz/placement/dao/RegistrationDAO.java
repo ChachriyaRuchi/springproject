@@ -1,7 +1,8 @@
 package com.xworkz.placement.dao;
 
-import com.xworkz.placement.dto.RegistrationDTO;
+import com.xworkz.placement.entity.UserEntity;
 
 public interface RegistrationDAO {
-	public void saveData(RegistrationDTO registrationDTO);
+	public boolean saveData(UserEntity userEntity) throws Exception;
+	
 }

@@ -14,11 +14,11 @@ import com.xworkz.placement.constants.Gender;
 import lombok.Data;
 @Data
 public class RegistrationDTO {
-	private final Logger logger=LogManager.getLogger(RegistrationDTO.class);
+	
 	private String name;
 	private String email;
 	private Long phonenumber;
-	private Gender gender;
+	private String gender;
 	private String password;
 	
 }

@@ -14,19 +14,20 @@
 	<div class="container" align="center">
 		<h1>Login</h1>
 		<form action="login.do" method="post">
-			<p>
+			<span>
 				<label for="username">UserName </label>
-				<input type="email" class="col-sm-2 col-form-label" name="username" placeholder="xyz" >
-			</p>
-			<p>
+				<input type="email" class="col-sm-2 col-form-label" name="username" ><br><br>
+			</span>
+			<span>
 				<label for="password">Password</label> 
-				<input type="password" class="col-sm-2 col-form-label" name="password">
-			</p>
-			<p>
+				<input type="password" class="col-sm-2 col-form-label" name="password"><br><br>
+			</span>
+			<span>
 				<input type="submit" class="btn btn-primary" value="login">
-				<input type="submit" class="btn btn-primary" value="signup" href="registration.jsp"/>
-				</p>
-				<a href="" class="btn btn-link">Forgot Your Password?</a>
+					<a href="displayRegistration.do" class="btn btn-primary">signup</a><br><br>
+				
+				</span>
+				<a href="#" class="btn btn-link">Forgot Your Password?</a>
 		</form>	
 	</div>
 	<div  class ="container-fluid text-center copyright" style="bottom: 0;position:fixed;">

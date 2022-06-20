@@ -12,9 +12,9 @@ import lombok.Data;
 
 @Data
 public class LoginDTO {
-	private final Logger logger=LogManager.getLogger(LoginDTO.class);
-	private String username;
-	private String password;
+	
+	private String email;
+	private String password;	
 	
 	
 	
