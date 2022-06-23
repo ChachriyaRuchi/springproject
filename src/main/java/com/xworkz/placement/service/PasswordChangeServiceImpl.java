@@ -4,11 +4,13 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.xworkz.placement.dao.PasswordChangeDAOImpl;
 import com.xworkz.placement.dto.PasswordChangeDTO;
 import com.xworkz.placement.entity.UserEntity;
 
+@Service
 public class PasswordChangeServiceImpl implements PasswordChangeService {
 	private final Logger logger = LogManager.getLogger(PasswordChangeServiceImpl.class);
 
@@ -20,7 +22,7 @@ public class PasswordChangeServiceImpl implements PasswordChangeService {
 		
 		UserEntity entity = new UserEntity();
 		if (passwordChangeDTO.getNewpassword()==passwordChangeDTO.getConfirmpassword()) {
-	//	BeanUtils.copyProperties(passwordChangeDTO, entity);
+		BeanUtils.copyProperties(passwordChangeDTO, entity);
 		changeDAO.updatePassword(entity, passwordChangeDTO);
 		}
 		else {

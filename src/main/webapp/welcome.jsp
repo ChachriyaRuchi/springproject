@@ -27,7 +27,7 @@
 					<a href="displayRegistration.do" class="btn btn-primary">signup</a><br><br>
 				
 				</span>
-				<a href="#" class="btn btn-link">Forgot Your Password?</a>
+				<a href="forgotPassword.do" class="btn btn-link">Forgot Your Password?</a>
 		</form>	
 	</div>
 	<div  class ="container-fluid text-center copyright" style="bottom: 0;position:fixed;">

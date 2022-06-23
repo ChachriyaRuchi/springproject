@@ -2,6 +2,8 @@ package com.xworkz.placement.controller;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.hibernate.engine.config.internal.ConfigurationServiceImpl;
+import org.hibernate.engine.config.spi.ConfigurationService;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,14 +13,15 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.xworkz.placement.dto.RegistrationDTO;
-import com.xworkz.placement.service.RegistrationService;
+import com.xworkz.placement.service.RegistraionService;
+
 
 @RestController("/")
 public class RegistrationController {
 	private final Logger logger = LogManager.getLogger(RegistrationController.class);
 
 	@Autowired
-	private RegistrationService registrationService;
+	private RegistraionService registrationService;
 
 	@GetMapping("displayRegistration.do")
 	public ModelAndView displayRegistration() {
@@ -27,12 +30,17 @@ public class RegistrationController {
 	}
 
 	@PostMapping("register.do")
-	public ModelAndView saveRegistrationDetails(  RegistrationDTO registrationDTO) {
+	public ModelAndView onAddRegistrationButtonClicked(RegistrationDTO registrationDTO){
 		//logger.info("INFO - login method invoked");
+		
+		
 
 		try {
-			registrationService.saveData(registrationDTO);
-			
+
+			boolean isValidate=registrationService.saveData(registrationDTO);
+			if(isValidate) {
+				
+			}
 			
 		} catch (Exception e) {
 			logger.error(e.getMessage(), e);

@@ -6,10 +6,11 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import com.xworkz.placement.dto.PasswordChangeDTO;
 import com.xworkz.placement.entity.UserEntity;
-
+@Repository
 public class PasswordChangeDAOImpl implements PasswordChangeDAO{
 	
 	EntityManagerFactory entityManagerFactory;
@@ -33,7 +34,6 @@ public class PasswordChangeDAOImpl implements PasswordChangeDAO{
 			et=em.getTransaction();
 			et.begin();
 			Query query=em.createQuery("UPDATE  UserEntity as update SET update.password= :newpassword WHERE update.email=:email AND update.password=:password");
-
 			query.setParameter("newpassword",passwordChangeDTO.getNewpassword());
 			query.setParameter("email",entity.getEmail());
 			query.setParameter("password",entity.getPassword());

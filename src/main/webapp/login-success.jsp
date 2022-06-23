@@ -41,7 +41,7 @@
                 <input type="password" name="confirmpassword" id="txtConfirmPassword" class="form-control" placeholder="Confirm Password"><br> 
             </div> 
         		<div>
-				<input type="submit" class="btn btn-primary" value="login">
+				<input type="submit" class="btn btn-primary" value="reset">
 				</div>
             </form>
 		</div>  
