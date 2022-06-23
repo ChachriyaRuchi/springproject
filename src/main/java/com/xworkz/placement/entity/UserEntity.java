@@ -7,7 +7,7 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import com.xworkz.placement.constants.Gender;
+
 
 import lombok.Data;
 @Data
@@ -24,7 +24,7 @@ public class UserEntity {
  		private String name;
 		private String email;
 		private Long phonenumber;
-		private Character gender;
+		private String gender;
 		private String password;
 		
 	}

@@ -38,7 +38,6 @@ public class LoginDAO {
 		String get="SELECT login.email,login.password FROM UserEntity as login WHERE email=:email AND password=:password";
 		logger.info("INFO - login method invoked");
 		
-		UserEntity enity=null;
 		String originalInput=entity.getPassword();
 		String encodedPassword=Base64.getEncoder().encodeToString(originalInput.getBytes());
 		try {
@@ -49,7 +48,7 @@ public class LoginDAO {
 			entity=(UserEntity) query.getSingleResult();
 			
 		}catch(Exception e) {
-			e.printStackTrace();
+			throw e;
 		}
 		return entity;
 		}

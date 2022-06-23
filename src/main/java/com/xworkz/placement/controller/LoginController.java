@@ -29,7 +29,7 @@ public class LoginController {
 		logger.info("INFO - login method invoked");
 		session.getServletContext();
 	
-		 loginService.validateUser(loginDto);
+			//loginService.validateUser(loginDto);
 		
 		if (loginService.validateUser(loginDto)!=null) {
 			session.setAttribute("details",loginService.validateUser(loginDto));

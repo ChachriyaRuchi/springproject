@@ -24,9 +24,7 @@
 	</build>
 	<properties>
 		<spring.version>5.3.20</spring.version>
-		<spring.security.version>5.7.1</spring.security.version>
-		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		
 	</properties>
 	<dependencies>
 		<!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
@@ -82,11 +80,7 @@
     <artifactId>log4j-core</artifactId>
     <version>2.17.2</version>
   </dependency>
-  <dependency>
-      <groupId>org.passay</groupId>
-      <artifactId>passay</artifactId>
-      <version>1.6.1</version>
-  </dependency>
+ 
 
 	</dependencies>
 </project>

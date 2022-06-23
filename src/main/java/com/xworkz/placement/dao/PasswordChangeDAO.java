@@ -21,8 +21,8 @@ public class PasswordChangeDAO {
 	public void setEntityManagerFactory(EntityManagerFactory entityManagerFactory) {
 		this.entityManagerFactory = entityManagerFactory;
 	}
-	PasswordChangeDTO changeDTO;
-	public void updatePassword(UserEntity entity) {
+	
+	public void updatePassword(UserEntity entity,PasswordChangeDTO changeDTO) {
 		EntityManager em=null;
 		EntityTransaction et=null;
 		
@@ -33,6 +33,7 @@ public class PasswordChangeDAO {
 			et=em.getTransaction();
 			et.begin();
 			Query query=em.createQuery("UPDATE  UserEntity SET password= :newpassword WHERE email=:email AND password=:password");
+//why is it going to throw null pointer exception(how to set the data in query which are not present in entity)
 			query.setParameter("newpassword",changeDTO.getNewpassword());
 			query.setParameter("email",entity.getEmail());
 			query.setParameter("password",entity.getPassword());
