@@ -28,8 +28,8 @@ public class LoginController {
 	public ModelAndView login(LoginDTO loginDto,HttpSession session) throws Exception {
 		logger.info("INFO - login method invoked");
 		session.getServletContext();
-	
-			//loginService.validateUser(loginDto);
+	//	loginService.validateUser(loginDto);
+		//	Member member=loginService.validateUser(loginDto);
 		
 		if (loginService.validateUser(loginDto)!=null) {
 			session.setAttribute("details",loginService.validateUser(loginDto));

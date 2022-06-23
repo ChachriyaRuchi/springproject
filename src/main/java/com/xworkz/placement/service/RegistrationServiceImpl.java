@@ -15,12 +15,12 @@ import com.xworkz.placement.entity.UserEntity;
 import com.xworkz.placement.util.PasswordGenerate;
 
 @Service
-public class RegistrationService {
-	private final Logger logger = LogManager.getLogger(RegistrationService.class);
+public class RegistrationServiceImpl implements RegistraionService{
+	private final Logger logger = LogManager.getLogger(RegistrationServiceImpl.class);
 
 	@Autowired
 	private RegistrationDAO registrationDao;
-
+	@Override
 	public boolean saveData(RegistrationDTO registrationDTO) throws Exception {
 		logger.info("INFO - save data registration service method invoked");
 		
